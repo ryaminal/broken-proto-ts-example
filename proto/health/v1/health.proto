@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package health.v1;
+
+import "buf/validate/validate.proto";
+
+option csharp_namespace = "com.example.health.v1";
+option go_package = "com.example.health.1";
+option java_multiple_files = true;
+option java_outer_classname = "HealthProtos";
+option java_package = "com.example.health.v1";
+option php_namespace = "com.example.health.v1";
+option ruby_package = "com.example.health.v1";
+option swift_prefix = "com.example.health.v1";
+
+message HealthCheckRequest {}
+
+message HealthCheckResponse {
+  enum HealthStatus {
+    HEALTH_STATUS_UNSPECIFIED = 0;
+    HEALTH_STATUS_OK = 1;
+  }
+  HealthStatus status_code = 1;
+  string status = 2 [(buf.validate.field).string.min_len = 1];
+}
+
+service HealthService {
+  rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {}
+}

@@ -1,0 +1,30 @@
+{
+  "name": "broken",
+  "version": "0.1.0",
+  "description": "broken",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/example.com/broken"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "buildit": "rm -rf src/broken src/google dist && mkdir -p src/broken dist && cp -a ./gen/ts/broken src/ && cp -a ./gen/ts/google src/ && tsc --outDir dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "soisyourface@blah.blah",
+  "license": "Proprietary",
+  "dependencies": {
+    "@grpc/grpc-js": "1.9.1",
+    "google-protobuf": "^3.21.2",
+    "protobufjs": "^7.2.3",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.4"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "@types/google-protobuf": "^3.15.6"
+  },
+  "type": "commonjs"
+}

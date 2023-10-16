@@ -1,0 +1,12 @@
+version: v1
+deps:
+  - buf.build/bufbuild/protovalidate
+breaking:
+  use:
+    - FILE
+lint:
+  use:
+    - DEFAULT
+  ignore:
+    # Should avoid ignoring in general. Ignoring Siderule as the contract is defined by a third part out of Dave
+    - sliderule

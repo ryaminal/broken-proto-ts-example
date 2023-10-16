@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package broken.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "broken.v1";
+option java_package = "broken.v1";
+
+message GetBrokenRequest {
+  string input_date = 1;
+  google.protobuf.Timestamp transaction_date = 2;
+}
+
+message GetBrokenResponse {
+  repeated string output_dates = 1;
+}
+
+service BrokenService {
+  rpc GetBroken(GetBrokenRequest) returns (GetBrokenResponse);
+}

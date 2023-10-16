@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "outDir": "./dist",
+    "rootDirs": [
+      "./bin",
+      "./src",
+      "./test"
+    ],
+    "declaration": true,
+    "moduleResolution": "Node",
+    "module": "CommonJS",
+    "importHelpers": true,
+    "sourceMap": true,
+    "listFiles": false,
+    "traceResolution": false,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "pretty": true,
+    "diagnostics": false,
+    "strictNullChecks": false,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "lib": [
+      "es2015",
+      "es2017"
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "*": [
+        "node_modules/@types/*",
+        "*",
+        "types/*"
+      ]
+    },
+    "esModuleInterop": false
+  },
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "scripts",
+    "node_modules",
+    "./dist",
+    "./bin/dev"
+  ]
+}
